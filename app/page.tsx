@@ -220,7 +220,7 @@ export default function LogsPage() {
         <table className="min-w-full border border-gray-200 rounded-lg">
           <thead className="bg-gray-100">
             <tr className="text-gray-700">
-              <th className="px-6 py-3 text-left">Date</th>
+              <th className="px-6 py-3 text-left">Started On</th>
               <th className="px-6 py-3 text-left">Completed On</th>
               <th className="px-6 py-3 text-left">Duration</th>
               <th className="px-6 py-3 text-left">Status</th>
