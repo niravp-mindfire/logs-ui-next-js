@@ -20,7 +20,6 @@ interface Log {
   modifiedFlights: { key: string; changes: string[] }[];
   date: string;
   error?: string;
-  duration?: string;
 }
 
 export default function LogsPage() {
@@ -165,10 +164,7 @@ export default function LogsPage() {
         { "key": "WY 0703", "changes": ["aircraftType: 'A320' → 'B737'"] }
       ]
     }                
-  ].map((log) => ({
-    ...log,
-    duration: calculateDuration(log.date, log.finishedOn),
-  }));;
+  ]
 
   // Function to filter logs based on selected filters
   const filteredLogs = logs.filter((log) => {
@@ -246,7 +242,7 @@ export default function LogsPage() {
               >
                 <td className="px-6 py-3">{log.date}</td>
                 <td className="px-6 py-3">{log.finishedOn}</td>
-                <td className="px-6 py-3">{log.duration}</td>
+                <td className="px-6 py-3">{calculateDuration(log.date, log.finishedOn)}</td>
                 <td className="px-6 py-3">
                   <span
                     className={`px-3 py-1 rounded capitalize text-white ${
