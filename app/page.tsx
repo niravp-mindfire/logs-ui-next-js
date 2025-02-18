@@ -48,10 +48,10 @@ export default function LogsPage() {
   const logs: Log[] = [
     {
       id: 6,
-      finishedOn: "2025-02-18 13:47:34",
+      finishedOn: "2025-02-18 13:57:50",
       payload: { userId: 128, action: "compare" },
       status: "success",
-      date: "2025-02-18 13:47:28",
+      date: "2025-02-18 13:47:34",
       steps: [
         {
           id: 1,
@@ -281,9 +281,18 @@ export default function LogsPage() {
           status: "info",
         },
       ],
-      removedFlights: [],
-      addedFlights: [],
-      modifiedFlights: [],
+      removedFlights: ["WY 1900", "WY 5078", "WY 5079"],
+      addedFlights: ["WY 6001"],
+      modifiedFlights: [
+        { key: "WY 0201", changes: ["itineraryVariationID: '23' → '25'"] },
+        {
+          key: "WY 0231",
+          changes: [
+            "departureTime: '10:00' → '10:30'",
+            "aircraftType: 'A320' → 'B737'",
+          ],
+        },
+      ],
     },
     {
       id: 1,
@@ -595,7 +604,7 @@ export default function LogsPage() {
       {/* Drawer Component */}
       {selectedLog && (
         <div className="fixed inset-0 z-50 bg-gray-900 bg-opacity-50">
-          <div className="fixed top-0 right-0 w-96 bg-white h-full shadow-lg transition-transform transform translate-x-0">
+          <div className="fixed top-0 right-0 w-97 bg-white h-full shadow-lg transition-transform transform translate-x-0">
             {/* Header */}
             <div className="flex justify-between items-center p-4 border-b bg-white sticky top-0">
               <h2 className="text-xl font-semibold">Log Details</h2>
